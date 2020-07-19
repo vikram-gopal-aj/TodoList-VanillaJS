@@ -1,0 +1,185 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.todoList {
+  border: 2px solid lightgray;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .todoList {
+    max-width: calc(50% - 1rem);
+    -webkit-box-flex: calc(50% - 1rem);
+        -ms-flex: calc(50% - 1rem);
+            flex: calc(50% - 1rem);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .todoList {
+    max-width: calc(100% / 3 - 1rem);
+    -webkit-box-flex: calc(100% / 3 - 1rem);
+        -ms-flex: calc(100% / 3 - 1rem);
+            flex: calc(100% / 3 - 1rem);
+  }
+}
+
+.todoList-top {
+  padding: 1rem 0 0.5rem;
+}
+
+.todoList-top p {
+  padding: 0.5rem 0.875rem;
+}
+
+.todoList-top button {
+  margin-left: 0.875rem;
+}
+
+.todoList-header {
+  position: relative;
+}
+
+.todoList-header input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid transparent;
+  width: 80%;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.todoList-header input:focus {
+  border-bottom-color: grey;
+}
+
+.todoList-list {
+  margin: 1rem 0 0.5rem;
+  padding: 0;
+  list-style: none;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.todoList-list li {
+  position: relative;
+  margin: 0.5rem 0.25rem;
+}
+
+.todoList-list li:hover .btn-removeTask {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  visibility: visible;
+  opacity: 1;
+}
+
+.todoList-list li.task-todo-done .task-input {
+  text-decoration: line-through;
+}
+
+.todoList-list li.hide {
+  display: none;
+}
+
+.todoList-list input[type="text"] {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid transparent;
+  width: calc(100% - 65px);
+}
+
+.todoList-list input[type="text"]:focus {
+  border-bottom-color: grey;
+}
+
+.btn-removeList {
+  padding: 0.125rem 0.5rem;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.btn-removeList:before {
+  content: "\f00d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+}
+
+.btn-removeTask {
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+}
+
+.btn-removeTask:before {
+  content: "\f00d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  color: grey;
+  font-size: 1.25rem;
+}
+
+.btn-createTask:after {
+  content: "\f14a";
+  font-family: "Font Awesome 5 Free";
+  margin-left: 0.5rem;
+}
+
+.task-toggle {
+  position: absolute;
+  opacity: 0;
+}
+
+.task-toggle + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.task-toggle + label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border: 1px solid grey;
+}
+
+.task-toggle:hover + label:before {
+  background: orange;
+}
+
+.task-toggle:checked + label:before {
+  background: orange;
+}
+
+.task-toggle:checked + label:after {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
