@@ -1,0 +1,148 @@
+.todoList {
+  border: 2px solid lightgray;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  @media screen and (min-width: 768px) {
+    max-width: calc(50% - 1rem);
+    flex: calc(50% - 1rem);
+  }
+  @media screen and (min-width: 992px) {
+    max-width: calc(100% / 3 - 1rem);
+    flex: calc(100% / 3 - 1rem);
+  }
+}
+
+.todoList {
+  &-top {
+    padding: 1rem 0 0.5rem;
+    p {
+      padding: 0.5rem 0.875rem;
+    }
+    button {
+      margin-left: 0.875rem;
+    }
+  }
+  &-header {
+    position: relative;
+    input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid transparent;
+      width: 80%;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      &:focus {
+        border-bottom-color: grey;
+      }
+    }
+  }
+}
+.todoList-list {
+  margin: 1rem 0 0.5rem;
+  padding: 0;
+  list-style: none;
+  max-height: 400px;
+  overflow-y: scroll;
+
+  li {
+    position: relative;
+    margin: 0.5rem 0.25rem;
+    &:hover {
+      .btn-removeTask {
+        transition: all 0.2s ease-in;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    &.task-todo-done .task-input {
+      text-decoration: line-through;
+    }
+    &.hide {
+      display: none;
+    }
+  }
+  input[type="text"] {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid transparent;
+    width: calc(100% - 65px);
+    &:focus {
+      border-bottom-color: grey;
+    }
+  }
+}
+
+.btn-removeList {
+  padding: 0.125rem 0.5rem;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  &:before {
+    content: "\f00d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+  }
+}
+
+.btn-removeTask {
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  &:before {
+    content: "\f00d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    color: grey;
+    font-size: 1.25rem;
+  }
+}
+
+.btn-createTask {
+  &:after {
+    content: "\f14a";
+    font-family: "Font Awesome 5 Free";
+    margin-left: 0.5rem;
+  }
+}
+
+.task-toggle {
+  position: absolute;
+  opacity: 0;
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    &:before {
+      content: "";
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 25px;
+      height: 25px;
+      background: white;
+      border: 1px solid grey;
+    }
+  }
+  &:hover + label:before {
+    background: orange;
+  }
+
+  &:checked + label:before {
+    background: orange;
+  }
+
+  &:checked + label:after {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    color: white;
+  }
+}
